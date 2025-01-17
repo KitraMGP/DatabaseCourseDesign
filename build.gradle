@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'kitra'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // MySQL 数据库驱动
+    // https://mvnrepository.com/artifact/com.mysql/mysql-connector
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
+
+    // MyBatis 数据库框架
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis
+    implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.16'
+
+    // Apache Commons Lang 反射工具库
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.17.0'
+
+    // Apache Commons Codec 提供加密算法
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.17.1'
+
+    // EasyExcel 操作Excel表格
+    // https://mvnrepository.com/artifact/com.alibaba/easyexcel
+    implementation group: 'com.alibaba', name: 'easyexcel', version: '4.0.3'
+
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainClass = 'kitra.employeetraining.Main'
+}
